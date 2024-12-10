@@ -23,7 +23,7 @@ jobs:
         run: |
             pwd
             ls -al
-            docker build ./Dockerfile.oracle8 --tag ghcr.io/adimenna-ripe/centoes-rpm-builder:oracle8
+            docker build --tag ghcr.io/adimenna-ripe/centoes-rpm-builder:oracle8 ./Dockerfile.oracle8
 
             docker run ghcr.io/adimenna-ripe/centoes-rpm-builder:oracle8
 
