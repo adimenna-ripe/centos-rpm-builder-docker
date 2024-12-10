@@ -9,23 +9,17 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-
-      - uses: actions/checkout@v2
+      - name: Checkout the repo
+        uses: actions/checkout@v4
 
       - name: Login to GitHub Container Registry
-
         uses: docker/login-action@v1
-
-    with:
-
-    registry: ghcr.io
-
-    username: ${{ github.actor }}
-
-    password: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Build the centos-rpm-builder Docker image
-
         run: |
 
             docker build -f Dockerfile.oracle8 --tag ghcr.io/adimenna-ripe/centoes-rpm-builder:oracle8
