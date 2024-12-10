@@ -22,7 +22,7 @@ jobs:
       - name: Build the centos-rpm-builder:oracle8 Docker image
         run: |
 
-            docker build bake -f Dockerfile.oracle8 --tag ghcr.io/adimenna-ripe/centoes-rpm-builder:oracle8
+            docker build Dockerfile.oracle8 --tag ghcr.io/adimenna-ripe/centoes-rpm-builder:oracle8
 
             docker run ghcr.io/adimenna-ripe/centoes-rpm-builder:oracle8
 
@@ -30,7 +30,7 @@ jobs:
 
       - name: Build the centos-rpm-builder:oracle9 Docker image
         run: |
-            docker build bake -f Dockerfile.oracle9 --tag ghcr.io/adimenna-ripe/centoes-rpm-builder:oracle9
+            docker build  Dockerfile.oracle9 --tag ghcr.io/adimenna-ripe/centoes-rpm-builder:oracle9
 
             docker run ghcr.io/adimenna-ripe/centoes-rpm-builder:oracle9
 
