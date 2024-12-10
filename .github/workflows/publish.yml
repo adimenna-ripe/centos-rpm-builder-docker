@@ -13,9 +13,9 @@ jobs:
       matrix:
         include:
           - dockerfile: ./Dockerfile.oracle8
-            image: ghcr.io/adimenna-ripe/centoes-rpm-builder:oracle8
+            image: ghcr.io/adimenna-ripe/oracle8-rpm-builder
           - dockerfile: ./Dockerfile.oracle9
-            image: ghcr.io/adimenna-ripe/centoes-rpm-builder:oracle8
+            image: ghcr.io/adimenna-ripe/oracle9-rpm-builder
     permissions:
       contents: read
       packages: write
