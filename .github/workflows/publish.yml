@@ -19,16 +19,18 @@ jobs:
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Build the centos-rpm-builder Docker image
+      - name: Build the centos-rpm-builder:oracle8 Docker image
         run: |
 
-            docker build -f Dockerfile.oracle8 --tag ghcr.io/adimenna-ripe/centoes-rpm-builder:oracle8
+            docker build bake -f Dockerfile.oracle8 --tag ghcr.io/adimenna-ripe/centoes-rpm-builder:oracle8
 
             docker run ghcr.io/adimenna-ripe/centoes-rpm-builder:oracle8
 
             docker push ghcr.io/adimenna-ripe/centoes-rpm-builder:oracle8
 
-            docker build -f Dockerfile.oracle9 --tag ghcr.io/adimenna-ripe/centoes-rpm-builder:oracle9
+      - name: Build the centos-rpm-builder:oracle9 Docker image
+        run: |
+            docker build bake -f Dockerfile.oracle9 --tag ghcr.io/adimenna-ripe/centoes-rpm-builder:oracle9
 
             docker run ghcr.io/adimenna-ripe/centoes-rpm-builder:oracle9
 
