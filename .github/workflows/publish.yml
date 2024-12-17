@@ -12,6 +12,8 @@ jobs:
       fail-fast: false
       matrix:
         include:
+          - dockerfile: ./Dockerfile.centos7
+            image: ghcr.io/adimenna-ripe/centos7-rpm-builder
           - dockerfile: ./Dockerfile.oracle8
             image: ghcr.io/adimenna-ripe/oracle8-rpm-builder
           - dockerfile: ./Dockerfile.oracle9
